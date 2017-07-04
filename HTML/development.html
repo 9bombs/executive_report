@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ระบบบริหารงานสำนักบริหารกิจการนิสิต จุฬาลงกรณ์มหาวิทยาลัย</title>
+
+  <!-- Bootstrap -->
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- bootstrap-progressbar -->
+  <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+  <!-- JQVMap -->
+  <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+  <!-- bootstrap-daterangepicker -->
+  <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+  <!-- Datatables -->
+  <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="build/css/custom.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>Executive Report</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>ยินดีต้อนรับ,</span>
+              <h2>ณัฐพล เจริญชัย</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>เมนูหลัก</h3>
+              <ul class="nav side-menu">
+
+                <li><a href="index.html"><i class="fa fa-home"></i> แผงควบคุม </span></a></li>
+                <li><a><i class="fa fa-home"></i> ประสานงานและเครือข่าย <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="cooperate.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="cooperate-form.html">นำเข้าข้อมูล</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-edit"></i> พัฒนานิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="development.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="development-form.html">นำเข้าข้อมูล</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> ทุนและบริการนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="scholarship.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-data.html">รายชื่อนิสิตทุน</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-new-form.html">เพิ่มทุนภายนอกใหม่</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> หอพักนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="residence.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="residence-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> ส่งเสริมสุขภาวะนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="wellness.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="wellness-data.html">ผู้ใช้บริการทั้งหมด</a>
+                    </li>
+                    <li>
+                      <a href="wellness-details.html">ข้อมูลผู้เข้าใช้บริการ</a>
+                    </li>
+                    <li>
+                      <a href="wellness-new-form.html">เพิ่มผู้ใช้บริการใหม่</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="wellness-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.jpg" alt="">ณัฐพล เจริญชัย
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="javascript:;">Help</a></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+        <div class="page-title">
+          <div class="title_left">
+            <h3>รายงานภาพรวมฝ่ายพัฒนานิสิต</h3>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>จำนวนกิจกรรมจำแนกตามเดือนที่ปฏบัติงาน</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="act_bar"></canvas>
+                <div id="act_barLegend" class="legend"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>งบประมาณสำหรับกิจกรรมนิสิตจำแนกตามสถานะโครงการ</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="program_pie"></canvas>
+                <div id="programLegend" class="legend"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="x_panel development">
+              <div class="x_title">
+                <h2>กิจกรรมฝ่ายพัฒนานิสิต </h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">โครงการส่งเสริมและพัฒนาศักยภาพเยาวชนด้อยดอกาสในชุมชนแออัด (จุฬาฯอาสา)</a>
+                    <p>โรงเรียนชุมชนหมู่บ้าพัฒนา คลองเตย จัดโดย <span>อบจ.</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ค่ายแนะแนวการศึกษาจังหวัดระยองครั้งที่ 17</a>
+                    <p>โรงเรียนบ้านฉางกาญจยกุลวิทยา จ.ระยอง จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ไหว้ครูล้านนา กิ๋นอ้อผญาคนเมือง ครั้งที่ 14</a>
+                    <p>ศูนย์ส่งเสริมวัฒนธรรมแห่งจุฬาลงกรณ์มหาวิทยาลัย (เรือนไทย) จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ปฐมนิเทศนิสิตระดับบัณฑิตศึกษาและพิธีถวายสัตยปฏิญาณตนเปนนิสิตจุฬาลงกรณมหาวิทยาลัย</a>
+                    <p>หอประชุมจุฬาลงกรณ และลานพระบรมราชานุสาวรียสมเด็จพระปยมหาราชและสมเด็จพระมหาธีรราชเจา จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">สัมมนาคณะกรรมการประสานงานเครือข่ายกิจการนิสิต</a>
+                    <p>ณ. ศูนย์การเรียนรู้และบริการวิชาการ เครือข่ายแห่งจุฬาฯ อำเภอเมือง จังหวัดน่าน จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">โครงการส่งเสริมและพัฒนาศักยภาพเยาวชนด้อยดอกาสในชุมชนแออัด (จุฬาฯอาสา)</a>
+                    <p>โรงเรียนชุมชนหมู่บ้าพัฒนา คลองเตย จัดโดย <span>อบจ.</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ค่ายแนะแนวการศึกษาจังหวัดระยองครั้งที่ 17</a>
+                    <p>โรงเรียนบ้านฉางกาญจยกุลวิทยา จ.ระยอง จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ไหว้ครูล้านนา กิ๋นอ้อผญาคนเมือง ครั้งที่ 14</a>
+                    <p>ศูนย์ส่งเสริมวัฒนธรรมแห่งจุฬาลงกรณ์มหาวิทยาลัย (เรือนไทย) จัดโดย <span>อบจ</span></p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>สถานะโครงการ</h2>
+                <div class="clearfix"></div>
+              </div>
+
+              <div class="x_content table-responsive">
+                <!-- start project list -->
+                <table class="table table-striped projects">
+                  <thead>
+                    <tr>
+                      <th style="width: 1%">#</th>
+                      <th style="width: 35%">ชื่อโครงการ</th>
+                      <th style="width: 15%">ผู้รับผิดชอบ</th>
+                      <th style="width: 20%">ความคืบหน้า</th>
+                      <th class="text-center">สถานะ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <a>ภาพกิจกรรมการฝึกภาคสนามของนักศึกษาวิชาทหาร จุฬาฯ ประจำปีการศึกษา 2559 ณ ศูนย์ฝึกฯ เขาชนไก่ จังหวัดกาญจนบุรี</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 6 กุมภาพันธ์ 2560</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            สิริโฉม ทรัพย์ทวี
+                          </li>
+                          <li>
+                            พรทวี ตันติชูเกียรติกุล
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                        </div>
+                        <small>100% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-success btn-xs">ดำเนินการเสร็จสิ้น</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <a>สัมมนาคณะกรรมการประสานงานเครือข่ายกิจการนิสิต จ.น่าน 16-18 มกราคม 2560</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 6 กุมภาพันธ์ 2560</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            พรทวี ตันติชูเกียรติกุล
+                          </li>
+                          <li>
+                            สุชาดา ตันติชูเกียรติกุล
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="30"></div>
+                        </div>
+                        <small>30% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-warning btn-xs">กำลังดำเนินการ</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>
+                        <a>การตรวจประเมินคุณภาพการศึกษาภายใน เมื่อวันที่ 9 พฤศจิกายน 2559 ณ ห้อง 202 อาคารจามจุรี 4</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 9 พฤศจิกายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            บุญเลิศ แซ่ตัน
+                          </li>
+                          <li>
+                            ธีระพงษ์ ชุติวินท์
+                          </li>
+                          <li>
+                            วรรณา ชุติวินท์
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="60"></div>
+                        </div>
+                        <small>60% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-warning btn-xs">กำลังดำเนินการ</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>
+                        <a>โครงการขับเคลื่อนการพัฒนาตามปรัชญาของเศรษฐกิจพอเพียง จุฬาฯสู่น่าน 26-28 กันยายน 2559</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 26-28 กันยายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            อนุพงษ์ หลิมอมรรัตน์
+                          </li>
+                          <li>
+                            วาสนา แจ่มศรี
+                          </li>
+                          <li>
+                            บุญเลิศ แซ่ตัน
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                        </div>
+                        <small>100% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-success btn-xs">ดำเนินการเสร็จสิ้น</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>
+                        <a>งานเลี้ยง จนท สำนักบริหารกิจการนิสิตเกษียณอายุราชการ 30 กันยายน 2559</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 26-28 กันยายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            ธีระพงษ์ ชุติวินท์
+                          </li>
+                          <li>
+                            วิไล อิ๋วสกุล
+                          </li>
+                          <li>
+                            ชุติมา จงเจียมใจ
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="80"></div>
+                        </div>
+                        <small>80% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-warning btn-xs">กำลังดำเนินการ</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>
+                        <a>พิธีวางพวงมาลาเนื่องในวันปิยมหาราชและถวายบังคมสักการะพระบรมศพพระบาทสมเด็จพระปรมินทรมหาภูมิพลอดุลยเดช 23 ตุลาคม 2559</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 26-28 กันยายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            สิริวรรณ แสงสี
+                          </li>
+                          <li>
+                            ฐานิต วรรณศรี
+                          </li>
+                          <li>
+                            เจริญพร สิริวันต์
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="87"></div>
+                        </div>
+                        <small>87% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-warning btn-xs">กำลังดำเนินการ</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>
+                        <a>พิธีพระราชทานปริญญาบัตรปีการศึกษา 2559 20-21 ตุลาคม 2559</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 26-28 กันยายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            ชุติมา จงเจียมใจ
+                          </li>
+                          <li>
+                            เพ็ญพัฒน์ ชุติวินท์
+                          </li>
+                          <li>
+                            วิไล อิ๋วสกุล
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                        </div>
+                        <small>100% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-success btn-xs">ดำเนินการเสร็จสิ้น</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>
+                        <a>งานมุทิตาจิตอาจารย์ด้านกิจการนิสิตเกษียณอายุราชการ 16 กันยายน 2559</a>
+                        <br />
+                        <small class="red">วันปฏิบัติงาน 26-28 กันยายน 2559</small>
+                      </td>
+                      <td>
+                        <ul class="responsible-list">
+                          <li>
+                            ปิติพงศ์ ตระกูลเมฆี
+                          </li>
+                          <li>
+                            ชุติมา จงเจียมใจ
+                          </li>
+                          <li>
+                            วาสนา แจ่มศรี
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="project_progress">
+                        <div class="progress progress_sm">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
+                        </div>
+                        <small>100% Complete</small>
+                      </td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-success btn-xs">ดำเนินการเสร็จสิ้น</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- end project list -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="vendors/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- FastClick -->
+  <script src="vendors/fastclick/lib/fastclick.js"></script>
+
+  <!-- NProgress -->
+  <script src="vendors/nprogress/nprogress.js"></script>
+
+  <!-- Chart.js -->
+  <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+
+  <!-- bootstrap-progressbar -->
+  <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="vendors/moment/min/moment.min.js"></script>
+  <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+
+  <!-- Datatables -->
+  <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+  <script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+  <script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+  <script src="vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+  <script src="vendors/jszip/dist/jszip.min.js"></script>
+  <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+  <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="build/js/custom.min.js"></script>
+
+
+
+
+  <!-- bootstrap-daterangepicker -->
+  <script>
+    $(document).ready(function () {
+
+      var cb = function (start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      };
+
+      var optionSet1 = {
+        startDate: moment().subtract(29, 'days'),
+        endDate: moment(),
+        minDate: '01/01/2012',
+        maxDate: '12/31/2015',
+        dateLimit: {
+          days: 60
+        },
+        showDropdowns: true,
+        showWeekNumbers: true,
+        timePicker: false,
+        timePickerIncrement: 1,
+        timePicker12Hour: true,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens: 'left',
+        buttonClasses: ['btn btn-default'],
+        applyClass: 'btn-small btn-primary',
+        cancelClass: 'btn-small',
+        format: 'MM/DD/YYYY',
+        separator: ' to ',
+        locale: {
+          applyLabel: 'Submit',
+          cancelLabel: 'Clear',
+          fromLabel: 'From',
+          toLabel: 'To',
+          customRangeLabel: 'Custom',
+          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          firstDay: 1
+        }
+      };
+      $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+      $('#reportrange').daterangepicker(optionSet1, cb);
+      $('#reportrange').on('show.daterangepicker', function () {
+        console.log("show event fired");
+      });
+      $('#reportrange').on('hide.daterangepicker', function () {
+        console.log("hide event fired");
+      });
+      $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
+        console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+      });
+      $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
+        console.log("cancel event fired");
+      });
+      $('#options1').click(function () {
+        $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+      });
+      $('#options2').click(function () {
+        $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+      });
+      $('#destroy').click(function () {
+        $('#reportrange').data('daterangepicker').remove();
+      });
+    });
+  </script>
+  <!-- /bootstrap-daterangepicker -->
+
+  <script type="text/javascript">
+    var options = {
+      legend: false,
+      events: false,
+      animation: {
+        duration: 0,
+        onComplete: function () {
+          var self = this,
+            chartInstance = this.chart,
+            ctx = chartInstance.ctx;
+
+          ctx.font = '15px tahoma';
+          ctx.textAlign = "center";
+          ctx.fillStyle = "#ffffff";
+
+          Chart.helpers.each(self.data.datasets.forEach((dataset, datasetIndex) => {
+            var meta = self.getDatasetMeta(datasetIndex),
+              total = 0, //total values to compute fraction
+              labelxy = [],
+              offset = Math.PI / 2, //start sector from top
+              radius,
+              centerx,
+              centery,
+              lastend = 0; //prev arc's end line: starting with 0
+
+            for (var val of dataset.data) { total += val; }
+
+            Chart.helpers.each(meta.data.forEach((element, index) => {
+              radius = 0.9 * element._model.outerRadius - element._model.innerRadius;
+              centerx = element._model.x;
+              centery = element._model.y;
+              var thispart = dataset.data[index],
+                arcsector = Math.PI * (2 * thispart / total);
+              if (element.hasValue() && dataset.data[index] > 0) {
+                labelxy.push(lastend + arcsector / 2 + Math.PI + offset);
+              }
+              else {
+                labelxy.push(-1);
+              }
+              lastend += arcsector;
+            }), self)
+
+            var lradius = radius * 3 / 4;
+            for (var idx in labelxy) {
+              if (labelxy[idx] === -1) continue;
+              var langle = labelxy[idx],
+                dx = centerx + lradius * Math.cos(langle),
+                dy = centery + lradius * Math.sin(langle),
+                //val = Math.round(dataset.data[idx] / total * 100);
+                val = dataset.data[idx] + " กิจกรรม";
+              ctx.fillText(val, dx, dy);
+            }
+
+          }), self);
+        }
+      },
+    };
+
+    // Pie chart
+    var ctx = document.getElementById("program_pie");
+    var data = {
+      datasets: [{
+        data: [300, 200, 500],
+        backgroundColor: [
+          "#FDCA49",
+          "#FFA927",
+          "#F8872E"
+        ]
+      }],
+      labels: [
+        "กำลังพิจารณา",
+        "กำลังดำเนืนการ",
+        "ดำเนินการแล้วเสร็จ"
+      ]
+    };
+
+    var pieChart = new Chart(ctx, {
+      data: data,
+      type: 'pie',
+      options: options
+    });
+
+    document.getElementById("programLegend").innerHTML = pieChart.generateLegend();
+
+    var opt = {
+      legend: false,
+      events: false,
+      tooltips: {
+        enabled: false
+      },
+      hover: {
+        animationDuration: 0
+      },
+      animation: {
+        duration: 500,
+        easing: "easeOutQuart",
+        onComplete: function () {
+          var ctx = this.chart.ctx;
+          ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+
+          this.data.datasets.forEach(function (dataset) {
+            for (var i = 0; i < dataset.data.length; i++) {
+              var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
+              ctx.fillStyle = '#444';
+              var y_pos = model.y - 2;
+              // Make sure data value does not get overflown and hidden
+              // when the bar's value is too close to max value of scale
+              // Note: The y value is reverse, it counts from top down
+              if ((scale_max - model.y) / scale_max >= 0.93)
+                y_pos = model.y + 18;
+              ctx.fillText(dataset.data[i], model.x, y_pos);
+            }
+          });
+        }
+      }
+    };
+
+    var bar_data = {
+      labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษยน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พศจิกายน", "ธันวาคม"],
+      datasets: [{
+        label: "จำนวนกิจกรรม",
+        backgroundColor: "#FFA927",
+        data: [51, 30, 40, 28, 92, 50, 45, 28, 30, 45, 40, 28]
+      }]
+    };
+
+    // Bar chart
+    var ctx = document.getElementById("act_bar");
+    var mybarChart = new Chart(ctx, {
+      type: 'bar',
+      data: bar_data,
+      options: opt
+    });
+
+    document.getElementById("act_barLegend").innerHTML = mybarChart.generateLegend();
+  </script>
+
+
+</body>
+
+</html>

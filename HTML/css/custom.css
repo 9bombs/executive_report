@@ -1,0 +1,104 @@
+.residence .media .date {
+    background-color: #FF003C;   
+}
+.funding .media .date {
+    background-color: #FF8A00;   
+}
+.development .media .date {
+    background-color: #FABE28;   
+}
+.wellness .media .date {
+    background-color: #88C100;   
+}
+.cooperate .media .date {
+    background-color: #00C176;   
+}
+
+
+.legend {
+    padding-top: 20px;
+}
+.legend ul {
+    width: 100%;
+    list-style:none;
+    text-align:center;
+}
+.legend li {
+    display: inline-block;
+    padding: 0px 15px;
+}
+.legend li span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+
+.responsible-list {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.student-list a {
+    color:#C21A01;
+}
+
+.x_title h2 {
+    overflow: visible;
+}
+.page-title .title_left {
+    width: 60%;
+    float: left;
+    display: block;
+}
+.page-title .title_right {
+    width: 40%;
+    float: left;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .x_title h2 {
+        width: 100%;
+        font-size: 17px;
+    }
+}
+
+
+
+.x_title h2 {
+  overflow: visible;
+}
+
+.panel_toolbox>li {
+    float: right;
+    cursor: pointer;
+}
+
+.ui-pnotify .alert{
+    border: none;
+}
+.ui-pnotify.residence .alert{
+  background-color: red;
+}
+.ui-pnotify.scholarship .alert{
+  background-color: #FF8A00;
+}
+.ui-pnotify.development .alert{
+  background-color: #FABE28;
+}
+.ui-pnotify.wellness .alert{
+  background-color: #88C100;
+}
+.ui-pnotify.cooperate .alert{
+  background-color: #00C176;
+}
+
+
+
+ul.messages li .message_date {
+    float: left;
+    text-align: right;
+}

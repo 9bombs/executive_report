@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ระบบบริหารงานสำนักบริหารกิจการนิสิต จุฬาลงกรณ์มหาวิทยาลัย</title>
+
+  <!-- Bootstrap -->
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- bootstrap-progressbar -->
+  <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+  <!-- JQVMap -->
+  <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+  <!-- bootstrap-daterangepicker -->
+  <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+  <!-- Datatables -->
+  <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="build/css/custom.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>Executive Report</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>ยินดีต้อนรับ,</span>
+              <h2>ณัฐพล เจริญชัย</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>เมนูหลัก</h3>
+              <ul class="nav side-menu">
+
+                <li><a href="index.html"><i class="fa fa-home"></i> แผงควบคุม </span></a></li>
+                <li><a><i class="fa fa-home"></i> ประสานงานและเครือข่าย <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="cooperate.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="cooperate-form.html">นำเข้าข้อมูล</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-edit"></i> พัฒนานิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="development.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="development-form.html">นำเข้าข้อมูล</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> ทุนและบริการนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="scholarship.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-data.html">รายชื่อนิสิตทุน</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-new-form.html">เพิ่มนิสิตทุนใหม่</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-new-funding.html">เพิ่มทุนภายนอกใหม่</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="scholarship-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> หอพักนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="residence.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="residence-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a><i class="fa fa-sitemap"></i> ส่งเสริมสุขภาวะนิสิต <span class="fa fa-chevron-down"></span></a>
+
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="wellness.html">รายงานภาพรวม</a>
+                    </li>
+                    <li>
+                      <a href="wellness-data.html">ผู้ใช้บริการทั้งหมด</a>
+                    </li>
+                    <li>
+                      <a href="wellness-details.html">ข้อมูลผู้เข้าใช้บริการ</a>
+                    </li>
+                    <li>
+                      <a href="wellness-new-form.html">เพิ่มผู้ใช้บริการใหม่</a>
+                    </li>
+                    <li>
+                      <a href="act-form.html">สร้างกิจกรรมใหม่</a>
+                    </li>
+                    <li>
+                      <a href="wellness-report-data.html">นำเข้าข้อมูลรายงานรายเดือน</a>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.jpg" alt="">ณัฐพล เจริญชัย
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="javascript:;">Help</a></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+
+        <div class="page-title">
+          <div class="title_left">
+            <h3>รายงานภาพรวมหน่วยหอพักนิสิต ประจำปีการศึกษา 2559</h3>
+          </div>
+          <div class="title_right">
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row tile_count">
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-area-chart" aria-hidden="true"></i> จำนวนนิสิตที่สมัครอยู่หอ</span>
+            <div class="count">2450</div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-area-chart" aria-hidden="true"></i> จำนวนนิสิตหอพักปัจจุบัน</span>
+            <div class="count">1200</div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-female"  aria-hidden="true"></i> จำนวนนิสิตชายที่รับได้</span>
+            <div class="count">520</div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-male" aria-hidden="true"></i>  จำนวนนิสิตหญิงที่รับได้</span>
+            <div class="count">680</div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-female"  aria-hidden="true"></i> เตียงว่างหอหญิง (เตียง)</span>
+            <div class="count">20</div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-male" aria-hidden="true"></i>  เตียงว่างหอชาย (เตียง)</span>
+            <div class="count">35</div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>จำนวนนิสิตหอพักจำแนกตามคณะ</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="act_bar" height="350px"></canvas>
+                <div id="act_bar_legend" class="legend"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+          <div class="col-md-6 col-sm-4 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>จำนวนนิสิตหอพักจำแนกตามภูมิลำเนา</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <div id="thai_vmap" style="height:720px;"></div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>จำนวนนิสิตหอพักจำแนกตึก</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="building_bar" height="180px"></canvas>
+                <div id="building_bar_legend" class="legend"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-sm-4 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>ปัญหาที่ได้รับการร้องเรียนสูงสุด</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="top_problem" height="250"></canvas>
+                <!--<div id="topproblem_legend" class="legend"></div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+
+          <div class="col-xs-6">
+            <div class="x_panel wellness">
+              <div class="x_title col-xs-12">
+                <h2>จำนวนพัสดุที่ได้รับ</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <canvas id="mood_line" height="250"></canvas>
+                <!--<div id="mood_line_legend" class="legend"></div>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="x_panel residence">
+              <div class="x_title">
+                <h2>กิจกรรมหน่วยหอพักนิสิต</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">พิธีมอบทุนนักศึกษาโดยบริษัท ไทยออยล์ จำกัด</a>
+                    <p>จัดโดย <span>หน่วยงานภายนอก</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ม.สงขลานครินทร์ วิทยาเขตปัตตานีเยี่ยมชมสำนักบริหารกิจการนิสิต</a>
+                    <p>จัดโดย <span>หน่วยงานภายนอก</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">ม.สงขลานครินทร์ วิทยาเขตปัตตานีเยี่ยมชมสำนักบริหารกิจการนิสิต</a>
+                    <p>ห้องประชุม 1 อาคารจุลจักรพงษ์ สำนักบริหารกิจการนิสิต จัดโดย <span>หน่วยงานภายนอก</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">โครงการ ซ่อมฝายชะลอน้ำ อาสาทำโปร่งเทียม เยี่ยมชมปางสีดา สหเวชฯจุฬาร่วมใจ</a>
+                    <p>ณ. อุทยานแห่งชาติปางสีดา อำเภอเมืองสระแก้ว จังหวัดสระแก้ว จัดโดย <span>หน่วยงานภายนอก</span></p>
+                  </div>
+                </article>
+                <article class="media event">
+                  <a class="pull-left date">
+                    <p class="month">April</p>
+                    <p class="day">23</p>
+                  </a>
+                  <div class="media-body">
+                    <a class="title" href="#">พิธีถวายสักการะ และรับโอวาทจากอธิการบดี เนื่องในโอกาสเข้าร่วมการแข่งขันกีฬามหาวิทยาลัยแห่งประเทศไทย ครั้งที่ 44</a>
+                    <p>ณ.สนามหน้าพระบรมราชานุสาวรีย์</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel tile">
+              <div class="x_title">
+                <h2>ปัญหาอื่นๆที่พบ</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <ul>
+                  <li>
+                    <h3>สตาร์ท แครอทอิออนโฮปโอเพ่น</h3>
+                    อีสเตอร์คีตกวีฮองเฮาอัตลักษณ์ เพียวช็อตโดมิโนลาตินโกะ นอมินีโซนี่ นายพรานโดนัทโดนัท เลกเชอร์ออเดอร์คันยิ โบว์กระดี๊กระด๊า
+                    คลาสสิกโค้ช รีพอร์ทการันตีสัมนาไบโอ ดั๊มพ์ป๊อก ฟลุต คอร์รัปชั่น เมคอัพรายชื่อเบิร์ดโชห่วย สต๊อคเดโมสารขัณฑ์ฮาร์ดเมคอัพ
+                    แพลนไฮกุ </li>
+
+                  <li>
+                    <h3>เรตเจไดพรีเซ็นเตอร์ ฟลุค อพาร์ตเมนท์บุญคุณพาสตา </h3>
+                    ลีเมอร์หมั่นโถวเกมส์ สเตเดียมธัมโมเซาท์ เซี้ยวโกเต็กซ์ซิตี้บอยคอตคาสิโน อพาร์ทเมนท์สงบสุขลอจิสติกส์บลูเบอร์รี่ก๋ากั่น โปรเจคท์แพตเทิร์นเด้อ
+                    สต็อคยิวแอนด์คาแร็คเตอร์ อุปการคุณเยอร์บีรา เบิร์ดซัพพลายเออร์ไมเกรน เยอร์บีร่า เมจิคแลนด์ โปรเจกเตอร์มั้ยแจ๊กพ็อตคอนเทนเนอร์คีตราชัน
+                    ทำงานแพนดาม้านั่งดีเจ รุสโซ </li>
+
+                  <li>
+                    <h3>ซาดิสต์ฮิตเกมส์วอล์ค ฮอตโค้ช</h3>
+                    อุปการคุณ นพมาศธรรมาภิบาลหมั่นโถว ออยล์ก่อนหน้าพาร์ตเนอร์เรตฟาสต์ฟู้ด บอมบ์วีซ่าโต๊ะจีน นายพราน พาสตาเซอร์ไลท์เด้อ ดัมพ์
+                    เซลส์แมนแพทเทิร์นพีเรียดซิตีอพาร์ทเมนต์ มาม่าแทกติคมลภาวะหล่อฮังก้วยโง่เขลา ซัมเมอร์ผู้นำจิ๊กซอว์สไปเดอร์
+                    บ๊อกซ์จูเนียร์โมเต็ลสัมนา โค้ก แพตเทิร์น มยุราภิรมย์ติงต๊องแอนด์ </li>
+
+                  <li>
+                    <h3>แอนด์เคอร์ฟิว ปิยมิตรเดบิต อมาตยาธิปไตยไวกิ้งชาร์ตอิสรชน</h3> แผดเผาภคันทลาพาธเลดี้ยอมรับ สเปก ติวเตอร์ดีลเลอร์จังโก้สโรชา
+                    โปสเตอร์อัลบั้มมัฟฟิน แฟ็กซ์แอ็กชั่นโรลออน ช็อคซานตาคลอสหยวนเปโซช็อค สโตน กับดักมะกัน แทงกั๊กอินเตอร์
+                    ทริปเจได ฮาโลวีนออโต้ศิลปากรมอลล์ เดโม วอลนัตมอลล์เอเซียฮวงจุ้ย </li>
+
+                  <li>
+                    <h3>สลัม มินท์ สเต็ปโคโยตี อึ้มบ๊อบตัวเองยังไงโปรเจ็ค</h3> แกงค์ฮ็อตด็อกมหาอุปราชา กลาสสไลด์วานิลลา เอนทรานซ์พาสต้า
+                    บู๊เปเปอร์แยมโรล ปัจเจกชนไฮกุโมเต็ลพาสปอร์ตวีซ่า เลคเชอร์ออร์แกนิกลาเต้สามช่า พุดดิ้งฮ็อตด็อก ละอ่อนโซนี่แอปเปิลคอนโดมิเนียม
+                    เหี่ยวย่นแมชชีนพูล ไอซียู เสือโคร่งคำตอบ กัมมันตะ </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="vendors/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- FastClick -->
+  <script src="vendors/fastclick/lib/fastclick.js"></script>
+
+  <!-- NProgress -->
+  <script src="vendors/nprogress/nprogress.js"></script>
+
+  <!-- Chart.js -->
+  <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+
+  <!-- bootstrap-progressbar -->
+  <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script src="vendors/moment/min/moment.min.js"></script>
+  <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- JQVMap -->
+  <script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="vendors/jqvmap/dist/maps/jquery.vmap.thai.js"></script>
+  <script src="vendors/jqvmap/dist/data/thai.sampledata.js"></script>
+
+  <!-- Datatables -->
+  <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+  <script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+  <script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+  <script src="vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+  <script src="vendors/jszip/dist/jszip.min.js"></script>
+  <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+  <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="build/js/custom.min.js"></script>
+
+
+  <!-- JQVMap -->
+
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+      jQuery('#thai_vmap').vectorMap({
+        map: 'thai_en',
+        backgroundColor: '#null',
+        color: '#ffffff',
+        hoverOpacity: 0.7,
+        selectedColor: '#999999',
+        enableZoom: true,
+        values: thai_sample_data,
+        showTooltip: true,
+        scaleColors: ['#FFFFFF', '#FF003C'],
+        normalizeFunction: 'polynomial',
+        onLabelShow: function (event, label, code) {
+          label.append(': ' + thai_sample_data[code] + ' คน');
+        }
+      });
+    });
+  </script>
+
+  <!-- bootstrap-daterangepicker -->
+  <script>
+    $(document).ready(function () {
+
+      var cb = function (start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      };
+
+      var optionSet1 = {
+        startDate: moment().subtract(29, 'days'),
+        endDate: moment(),
+        minDate: '01/01/2012',
+        maxDate: '12/31/2015',
+        dateLimit: {
+          days: 60
+        },
+        showDropdowns: true,
+        showWeekNumbers: true,
+        timePicker: false,
+        timePickerIncrement: 1,
+        timePicker12Hour: true,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens: 'left',
+        buttonClasses: ['btn btn-default'],
+        applyClass: 'btn-small btn-primary',
+        cancelClass: 'btn-small',
+        format: 'MM/DD/YYYY',
+        separator: ' to ',
+        locale: {
+          applyLabel: 'Submit',
+          cancelLabel: 'Clear',
+          fromLabel: 'From',
+          toLabel: 'To',
+          customRangeLabel: 'Custom',
+          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          firstDay: 1
+        }
+      };
+      $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+      $('#reportrange').daterangepicker(optionSet1, cb);
+      $('#reportrange').on('show.daterangepicker', function () {
+        console.log("show event fired");
+      });
+      $('#reportrange').on('hide.daterangepicker', function () {
+        console.log("hide event fired");
+      });
+      $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
+        console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+      });
+      $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
+        console.log("cancel event fired");
+      });
+      $('#options1').click(function () {
+        $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+      });
+      $('#options2').click(function () {
+        $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+      });
+      $('#destroy').click(function () {
+        $('#reportrange').data('daterangepicker').remove();
+      });
+    });
+  </script>
+  <!-- /bootstrap-daterangepicker -->
+
+  <script type="text/javascript">
+    var opt = {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: false,
+      events: false,
+      tooltips: {
+        enabled: false
+      },
+      hover: {
+        animationDuration: 0
+      },
+      animation: {
+        duration: 500,
+        easing: "easeOutQuart",
+        onComplete: function () {
+          var ctx = this.chart.ctx;
+          ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+
+          this.data.datasets.forEach(function (dataset) {
+            for (var i = 0; i < dataset.data.length; i++) {
+              var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
+              ctx.fillStyle = '#444';
+              var y_pos = model.y - 2;
+              // Make sure data value does not get overflown and hidden
+              // when the bar's value is too close to max value of scale
+              // Note: The y value is reverse, it counts from top down
+              if ((scale_max - model.y) / scale_max >= 0.93)
+                y_pos = model.y + 18;
+              ctx.fillText(dataset.data[i], model.x, y_pos);
+            }
+          });
+        }
+      }
+    };
+
+    var bar_data = {
+      labels: ["คณะครุศาสตร์", "คณะนิติศาสตร์", "คณะนิเทศศาสตร์", "คณะพาณิชยศาสตร์และการบัญชี", "คณะรัฐศาสตร์", "คณะเศรษฐศาสตร์", "คณะอักษรศาสตร์", "คณะวิทยาศาสตร์", "คณะวิศวกรรมศาสตร์", "คณะสถาปัตยกรรมศาสตร์", "สำนักวิชาทรัพยากรการเกษตร", "คณะจิตวิทยา", "คณะทันตแพทยศาสตร์", "คณะพยาบาลศาสตร์", "คณะแพทยศาสตร์", "คณะเภสัชศาสตร์", "คณะสหเวชศาสตร์", "คณะวิทยาศาสตร์การกีฬา", "คณะสัตวแพทยศาสตร์"],
+      datasets: [{
+        label: "นิสิตชาย",
+        backgroundColor: "#0088FF",
+        data: [49,49,32,30,29,25,23,20,16,13,10,7,5,3,0,0,0,0,0]
+      }, {
+        label: "นิสิตหญิง",
+        backgroundColor: "#FF003C",
+        data: [93,92,83,73,72,62,60,57,53,43,38,29,26,18,10,10,8,3,1]
+      }]
+    };
+
+    // Bar chart
+    var ctx = document.getElementById("act_bar");
+    var mybarChart = new Chart(ctx, {
+      type: 'bar',
+      data: bar_data,
+      options: opt
+    });
+
+
+    document.getElementById("act_bar_legend").innerHTML = mybarChart.generateLegend();
+
+    var building_data = {
+      labels: ["พุดตาล", "พุดซ้อน", "จำปี", "จำปา", "ชวนชม"],
+      datasets: [{
+        label: "จำนวนนิสิต",
+        backgroundColor: "#FF003C",
+        data: [getRandomInt(400, 600), getRandomInt(400, 600), getRandomInt(500, 800), getRandomInt(350, 500), getRandomInt(600, 800),]
+      }]
+    };
+
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    // Bar chart
+    var ctx = document.getElementById("building_bar");
+    var mybarChart = new Chart(ctx, {
+      type: 'bar',
+      data: building_data,
+      options: opt
+    });
+
+
+    var mood_line_chart = document.getElementById("mood_line");
+    var lineChart = new Chart(mood_line_chart, {
+      type: 'line',
+      min: 4.0,
+      data: {
+        labels: ["สิงหาคม 2559", "กันยายน 2559", "ตุลาคม 2559", "พฤศจิกายน 2559", "ธันวาคม 2559", "มกราคม 2560", "กุมภาพันธ์ 2560", "มีนาคม 2560", "เมษายน 2560"],
+        datasets: [{
+          fill: false,
+          label: "พัสดุที่รับ",
+          borderColor: "#FF003C",
+          backgroundColor: "#FF003C",
+          lineTension: 0,
+          pointBorderWidth: 1,
+          pointRadius: 2,
+
+          //hit chart data
+          data: [2500, 1800, 2574, 3014, 1915, 2104, 2401, 2301, 4210]
+        }]
+      },
+      options: {
+        legend: false,
+        responsive: true,
+        maintainAspectRatio: false,
+      }
+    });
+
+    //document.getElementById("mood_line_legend").innerHTML = lineChart.generateLegend();
+
+
+    var horizon_opt = {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: false,
+      events: false,
+      tooltips: {
+        enabled: false
+      },
+      hover: {
+        animationDuration: 0
+      },
+      animation: {
+        duration: 500,
+        easing: "easeOutQuart",
+        onComplete: function () {
+          var ctx = this.chart.ctx;
+          ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+          ctx.textAlign = 'right';
+          ctx.textBaseline = 'middle';
+
+          this.data.datasets.forEach(function (dataset) {
+            for (var i = 0; i < dataset.data.length; i++) {
+              var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._xScale.maxHeight;
+              ctx.fillStyle = '#000';
+              var x_pos = model.x + 20
+              // Make sure data value does not get overflown and hidden
+              // when the bar's value is too close to max value of scale
+              // Note: The y value is reverse, it counts from top down
+
+              if ((scale_max - model.x) / scale_max < -0.9) var x_pos = model.x - 20;
+              console.log((scale_max - model.x) / scale_max);
+              ctx.fillText(dataset.data[i], x_pos, model.y);
+            }
+          });
+        }
+      }
+    };
+
+    var bar_data = {
+      labels: ["มีปัญหากับเพื่อนร่วมห้อง", "เสียงดัง", "ความสะอาด", "กิจกรรม", "พัสดุหาย", "คะแนนกิจกรรม", "โรงอาหาร"],
+      datasets: [{
+        label: "จำนวนปัญหาที่ได้รับการ้องเรียน",
+        backgroundColor: "#FF003C",
+        data: [25, 20, 18, 16, 15, 10, 7]
+      }]
+    };
+
+    // Bar chart
+    var ctx = document.getElementById("top_problem");
+    var mybarChart = new Chart(ctx, {
+      responsive: true,
+      type: 'horizontalBar',
+      data: bar_data,
+      options: horizon_opt
+    });
+
+    //document.getElementById("topproblem_legend").innerHTML = mybarChart.generateLegend();
+  </script>
+
+
+</body>
+
+</html>
