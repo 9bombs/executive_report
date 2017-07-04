@@ -8,8 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    {{Html::style('./css/app.css')}}
+    <title>{{ config('APP_NAME', 'ระบบบริหารงานภายในสำนักบริหารกิจการนิสิต') }}</title>
+    {{Html::style('css/app.css')}}
     @if(Auth::check()) 
         @include('layouts.header')
     @endif
