@@ -15,7 +15,7 @@
             </div>
             <div class="profile_info">
               <span>ยินดีต้อนรับ,</span>
-              <h2>ณัฐพล เจริญชัย</h2>
+              <h2>{{$user->name}}</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->

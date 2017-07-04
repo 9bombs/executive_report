@@ -11,20 +11,29 @@ class UsersTableSeeder extends Seeder
         User::truncate();
 
         User::create([
-            'name'=>'michael',
-            'email'=>'michael@mail.com',
+            'name'=>'ณัฐพล เจริญชัย',
+            'username' => 'nattaponJ',
+            'position'=> 'เจ้าหน้าที่หน่วยสุขภาวะ',
+            'employee_number'=>'5030145721',
+            'email'=>'nattaponJ@mail.com',
             'password'=>'1234',
         ]);
 
         User::create([
-            'name'=>'nathan',
-            'email'=>'nathan@mail.com',
+            'name'=>'พีระพงศ์ ศรีเจริญกุล',
+            'username' => 'peerapongS',
+            'position'=> 'เจ้าหน้าที่หน่วยสุขภาวะ',
+            'employee_number'=>'5030145722',
+            'email'=>'peerapongS@mail.com',
             'password'=>'1234',
         ]);
 
         User::create([
-            'name'=>'simon',
-            'email'=>'simon@mail.com',
+            'name'=>'กุลธิดา นามดี',
+            'username' => 'kulthidaN',
+            'position'=> 'เจ้าหน้าที่การเงิน',
+            'employee_number'=>'5030145723',
+            'email'=>'kulthidaN@mail.com',
             'password'=>'1234',
         ]);
     }

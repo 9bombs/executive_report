@@ -1,15 +1,8 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-       
-       @include('layouts.header')
+@extends('layouts.app')
 
-    </head>
+
+@section('content')
    <body class="nav-md">
   <div class="container body">
     <div class="main_container">
@@ -31,8 +24,7 @@
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                  <li><a href="javascript:;">Help</a></li>
-                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  <li><a href="{{URL::route('logout')}}"><i class="fa fa-sign-out pull-right"></i> ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
@@ -431,7 +423,4 @@
     </div>
   </div>
 
-        @include('layouts.footer')
-            
-    </body>
-</html>
+@endsection

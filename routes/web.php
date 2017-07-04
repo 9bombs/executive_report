@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,14 +12,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('login', function() {
-  // code here
-})->name('login');
-
-Route::get('/register', function() {
-  // code here
-})->name('register');
+Auth::routes();
+Route::get('/logout', array('as'=>'logout','uses'=>'Auth\LoginController@logout'));
+Route::get('/', 'HomeController@index')->name('home');
