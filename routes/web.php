@@ -15,3 +15,11 @@ use App\User;
 Auth::routes();
 Route::get('/logout', array('as'=>'logout','uses'=>'Auth\LoginController@logout'));
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('register',function() {
+    return view('auth.register');
+})->name('register');
+
+Route::get('/wellness/home', function() {
+    return view('wellness.home');
+});
