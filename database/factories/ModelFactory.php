@@ -40,6 +40,7 @@ $factory->define(App\Wellness\Patient::class, function (Faker\Generator $faker) 
 
         'telephone' => $faker->phoneNumber,
         'nickname' => $faker->name, 
+        'student_level' => $faker->randomElement($array = array ('ปริญญาตรี','ปริญญาโท','ปริญญาเอก')),
         'studied_year' => $faker->numberBetween($min = 1, $max = 8),
         'faculty_id' => $faker->numberBetween($min = 1, $max = 20),
         'field' => $faker->realText($maxNbChars = 50, $indexSize = 2),
@@ -58,6 +59,8 @@ $factory->define(App\Wellness\Patient::class, function (Faker\Generator $faker) 
 
         'workplace' => $faker->realText($maxNbChars = 75, $indexSize = 2),
         'position' => $faker->realText($maxNbChars = 25, $indexSize = 2),
+
+        'created_at' => $faker->dateTimeThisDecade($max = 'now'),
     ];
 });
 
@@ -71,6 +74,7 @@ $factory->define(App\Wellness\History::class, function (Faker\Generator $faker) 
         'patient_id' => $faker->numberBetween($min = 1, $max = 5),
         'symptom_id' => $faker->numberBetween($min = 1, $max = 15),
         'note' => $faker->realText($maxNbChars = 200, $indexSize = 2), 
+        'created_at' => $faker->dateTimeThisDecade($max = 'now'),
     ];
 });
 
@@ -89,6 +93,6 @@ $factory->define(App\Wellness\Symptom::class, function (Faker\Generator $faker) 
     return [
         'name' => $faker->name, 
         'is_severe' => $faker->boolean($chanceOfGettingTrue = 10),
-        'note' => $faker->realText($maxNbChars = 200, $indexSize = 2), 
+        'note' => $faker->realText($maxNbChars = 200, $indexSize = 2),
     ];
 });

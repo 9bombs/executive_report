@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@push('styles')
+
+    <!-- Bootstrap -->
+    {{Html::style('vendors/bootstrap/dist/css/bootstrap.min.css')}}
+    <!-- Font Awesome -->
+    {{Html::style('vendors/font-awesome/css/font-awesome.min.css')}}
+    <!-- NProgress -->
+    {{Html::style('vendors/nprogress/nprogress.css')}}
+    <!-- Animate.css -->
+    {{Html::style('vendors/animate.css/animate.min.css')}}
+    <!-- Custom Theme Style -->
+    {{Html::style('build/css/custom.css')}}
+
+
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row">

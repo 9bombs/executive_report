@@ -28,7 +28,7 @@
               <h3>เมนูหลัก</h3>
               <ul class="nav side-menu">
 
-                <li><a href="index.html"><i class="fa fa-home"></i> แผงควบคุม </span></a></li>
+                <li><a href="{{URL::route('home')}}"><i class="fa fa-home"></i> แผงควบคุม </span></a></li>
                 <li><a><i class="fa fa-home"></i> ประสานงานและเครือข่าย <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li>
@@ -98,13 +98,10 @@
 
                   <ul class="nav child_menu">
                     <li>
-                      <a href="wellness.html">รายงานภาพรวม</a>
+                      <a href="{{URL::route('wellnessHome')}}">รายงานภาพรวม</a>
                     </li>
                     <li>
-                      <a href="wellness-data.html">ผู้ใช้บริการทั้งหมด</a>
-                    </li>
-                    <li>
-                      <a href="wellness-details.html">ข้อมูลผู้เข้าใช้บริการ</a>
+                      <a href="{{URL::route('wellnessPatientList')}}">ผู้ใช้บริการทั้งหมด</a>
                     </li>
                     <li>
                       <a href="wellness-new-form.html">เพิ่มผู้ใช้บริการใหม่</a>
@@ -142,3 +139,27 @@
           <!-- /menu footer buttons -->
         </div>
       </div>
+
+       <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.jpg" alt="">{{$user->name}}
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="{{URL::route('logout')}}"><i class="fa fa-sign-out pull-right"></i> ออกจากระบบ</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->

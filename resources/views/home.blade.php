@@ -2,36 +2,37 @@
 @extends('layouts.app')
 
 
+@push('styles') 
+  <!-- Bootstrap -->
+  {{Html::style('vendors/bootstrap/dist/css/bootstrap.min.css')}}
+  <!-- Font Awesome -->
+  {{Html::style('vendors/font-awesome/css/font-awesome.min.css')}}
+  <!-- NProgress -->
+  {{Html::style('vendors/nprogress/nprogress.css')}}
+  <!-- iCheck -->
+  {{Html::style('vendors/iCheck/skins/flat/green.css')}}
+  <!-- bootstrap-progressbar -->
+  {{Html::style('vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}
+  <!-- JQVMap -->
+  {{Html::style('vendors/jqvmap/dist/jqvmap.min.css')}}
+  <!-- bootstrap-daterangepicker -->
+  {{Html::style('vendors/bootstrap-daterangepicker/daterangepicker.css')}}
+
+  <!-- Datatables -->
+  {{Html::style('vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')}}
+  {{Html::style('vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}
+
+  <!-- Custom Theme Style -->
+  {{Html::style('build/css/custom.min.css')}}
+  {{Html::style('css/custom.css')}}
+@endpush
+
 @section('content')
    <body class="nav-md">
   <div class="container body">
     <div class="main_container">
       
       @include('layouts.sidebar')
-
-      <!-- top navigation -->
-      <div class="top_nav">
-        <div class="nav_menu">
-          <nav>
-            <div class="nav toggle">
-              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li class="">
-                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">{{$user->name}}
-                                    <span class=" fa fa-angle-down"></span>
-                                </a>
-                <ul class="dropdown-menu dropdown-usermenu pull-right">
-                  <li><a href="{{URL::route('logout')}}"><i class="fa fa-sign-out pull-right"></i> ออกจากระบบ</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <!-- /top navigation -->
 
       <!-- page content -->
       <div class="right_col" role="main">
@@ -424,3 +425,59 @@
   </div>
 
 @endsection
+
+
+@push('scripts') 
+
+
+  <!-- jQuery -->
+  {{Html::script('vendors/jquery/dist/jquery.min.js')}}
+
+  <!-- Bootstrap -->
+  {{Html::script('vendors/bootstrap/dist/js/bootstrap.min.js')}}
+
+  <!-- FastClick -->
+  {{Html::script('vendors/fastclick/lib/fastclick.js')}}
+
+  <!-- NProgress -->
+  {{Html::script('vendors/nprogress/nprogress.js')}}
+
+  <!-- Chart.js -->
+  {{Html::script('vendors/Chart.js/dist/Chart.min.js')}}
+
+  <!-- gauge.js -->
+  {{Html::script('vendors/gauge.js/dist/gauge.min.js')}}
+
+  <!-- bootstrap-progressbar -->
+  {{Html::script('vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}
+
+  <!-- iCheck -->
+  {{Html::script('vendors/iCheck/icheck.min.js')}}
+
+  <!-- Flot plugins -->
+  {{Html::script('vendors/flot.orderbars/js/jquery.flot.orderBars.js')}}
+  {{Html::script('vendors/flot-spline/js/jquery.flot.spline.min.js')}}
+  {{Html::script('vendors/flot.curvedlines/curvedLines.js')}}
+
+  <!-- DateJS -->
+  {{Html::script('vendors/DateJS/build/date.js')}}
+
+  <!-- JQVMap -->
+  {{Html::script('vendors/jqvmap/dist/jquery.vmap.js')}}
+  {{Html::script('vendors/jqvmap/dist/maps/jquery.vmap.thai.js')}}
+  {{Html::script('vendors/jqvmap/dist/data/thai.sampledata.js')}}
+
+  <!-- bootstrap-daterangepicker -->
+  {{Html::script('vendors/moment/min/moment.min.js')}}
+  {{Html::script('vendors/bootstrap-daterangepicker/daterangepicker.js')}}
+
+  <!-- PNotify -->
+  {{Html::script('vendors/pnotify/dist/pnotify.js')}}
+  {{Html::script('vendors/pnotify/dist/pnotify.buttons.js')}}
+  {{Html::script('vendors/pnotify/dist/pnotify.nonblock.js')}}
+
+  <!-- Custom Theme Scripts -->
+  {{Html::script('build/js/custom.min.js')}}
+
+
+@endpush

@@ -51,4 +51,7 @@ class History extends Model
         return $this->belongsTo('App\Wellness\Symptom','symptom_id');
     }
 
+    
+
+
 }

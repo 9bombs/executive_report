@@ -14,12 +14,12 @@ class CreateWellnessTables extends Migration
     public function up()
     {
         Schema::create('wn_patients', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
+            $table->increments('id')->unsigned()->index();
             $table->string('cn');
-            $table->enum('type',['นิสิตภาคปกติ','นิสิตอินเตอร์','อาจารย์','บุคลากร']);
+            $table->string('type');
             $table->string('personal_id')->index(); //เลขปชช หรือ รหัสนิสิต
             $table->string('name',255);
-            $table->enum('gender',['ชาย','หญิง','ไม่ระบุ']);
+            $table->string('gender');
             $table->string('email',100);
             $table->date('birthdate');
             $table->string('address');
@@ -28,8 +28,9 @@ class CreateWellnessTables extends Migration
 
             //ข้อมูลนิสิต
             $table->string('nickname',25)->nullable();
+            $table->string('student_level');
             $table->integer('studied_year')->nullable();
-            $table->integer('faculty_id')->nullable();
+            $table->integer('faculty_id')->nullable()->references('id')->on('faculties')->onUpdate('cascade');
             $table->string('field')->nullable();
 
             //ข้อมูลติดต่อฉุกเฉิน1
@@ -100,6 +101,9 @@ class CreateWellnessTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('wn_patients');
+        Schema::dropIfExists('wn_advisors');
+        Schema::dropIfExists('wn_patient_histories');
+        Schema::dropIfExists('wn_symptom');
     }
 }

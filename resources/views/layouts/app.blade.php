@@ -9,14 +9,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('APP_NAME', 'ระบบบริหารงานภายในสำนักบริหารกิจการนิสิต') }}</title>
-    {{Html::style('css/app.css')}}
+    
     @if(Auth::check()) 
-        @include('layouts.header')
+        {{Html::style('css/app.css')}}
     @endif
+    
+    @stack('styles')
+    
     </head>
 
     @yield('content')
 
-    @include('layouts.footer')
+     @stack('scripts')
 </body>
 </html>

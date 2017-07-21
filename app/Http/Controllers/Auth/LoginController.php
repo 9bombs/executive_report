@@ -20,6 +20,8 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected $redirectAfterLogout = 'auth/login';
+
     /**
      * Where to redirect users after login.
      *
@@ -41,4 +43,6 @@ class LoginController extends Controller
     {
         return 'username';
     }
+
+
 }
