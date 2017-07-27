@@ -43,17 +43,6 @@
                     <div class="page-title">
                         <div class="title_left">
                         </div>
-
-                        <div class="title_right">
-                            <!--<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                                </div>
-                            </div>-->
-                        </div>
                     </div>
 
                     <div class="clearfix"></div>
@@ -69,13 +58,9 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
+                                                <li><a href="/wellness/patient/{{$patient->id}}/edit">edit</a>
                                                 </li>
                                             </ul>
-                                        </li>
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
                                         </li>
                                     </ul>
                                     <div class="clearfix"></div>
@@ -125,10 +110,10 @@
                                          <h4><strong>หมายเลขติดต่อ Advisor</strong></h4>
                                         <ul class="list-unstyled user_data">
                                             <li>
-                                                <p>{{$patient->doctor_name}}</p>
+                                                <p>{{$patient->advisor->name}}</p>
                                             </li>
                                             <li>
-                                                <p>โทร. {{$patient->doctor_phone}}</p>
+                                                <p>โทร. {{$patient->advisor->phone}}</p>
                                             </li>
                                         </ul>
 

@@ -16,7 +16,7 @@ use App\User;
 Auth::routes();
 Route::get('/logout', array('as'=>'logout','uses'=>'Auth\LoginController@logout'));
 
-Route::get('register',function() {
+Route::get('/register',function() {
     return view('auth.register');
 })->name('register');
 
@@ -27,10 +27,16 @@ Route::get('/', array( 'as' => 'home', 'uses' => 'HomeController@index'));
 
 //Wellness routes
 Route::get('/wellness/home', array('as' => 'wellnessHome', 'uses' => 'WellnessController@home'));
+
+
+
 Route::get('/wellness/patient-list', array('as' => 'wellnessPatientList', 'uses' => 'WellnessController@patientList'));
 Route::get('/wellness/patient/{id}', array('as' => 'wellnessPatientDetails', 'uses' => 'WellnessController@patientDetails'));
-Route::get('wellness/patient/{id}/chart', array('as' => 'wellnessPatientChartData', 'uses' => 'WellnessController@getPatientChart'));
+Route::get('/wellness/patient/{id}/chart', array('as' => 'wellnessPatientChartData', 'uses' => 'WellnessController@getPatientChart'));
 
+//Edit Patient
+Route::get('/wellness/patient/{id}/edit', array('as'=>'wellnessPatientEdit','uses' => 'WellnessController@editPatient'));
+Route::post('/wellness/patient/{id}/edit',array('as'=>'wellnessPatientSave','uses' => 'WellnessController@updatePatient'));
 
 //Wellness graph data in JSON
 Route::get('/wellness/json/{select}' , array('as' => 'wellnessGraph', 'uses' => 'WellnessController@graphSelect'));

@@ -8,35 +8,10 @@ use Illuminate\Support\Facades\DB;
 use App\Wellness\Patient;
 use App\Wellness\History;
 use App\Wellness\symptom;
+use Redirect;
 
 class WellnessController extends Controller
 {
-    /**
-     * Return JSON for จำนวนผู้เข้าใช้บริการหน่วยส่งเสริมสุขภาวะนิสิต จำแนกตามคณะและเพศแสดงผลใหม่
-     *
-     * @return void
-     */
-    public function graphSelect($selector)
-    {
-        if($selector == 1) {
-            $this->patient_symptom (1, 2);
-        }
-
-    }
-
-    public function patient_symptom ($month, $year, $semester) {
-
-        $men_patients = DB::table('wn_patient_histories')
-        ->join('wn_patients','wn_patient_histories.patient_id','=','wn_patients.id')
-        ->select(DB::raw('count(*) as count'),DB::raw('YEAR(wn_patient_histories.created_at) as year'), DB::raw('MONTH(wn_patient_histories.created_at) as month'))
-        ->where('wn_patients.gender','=','หญิง')
-        ->groupBy(DB::raw("YEAR(wn_patient_histories.created_at), MONTH(wn_patient_histories.created_at)"))
-        ->get();
-
-
-
-    }
-    
 
      /**
      * Show the application dashboard.
@@ -112,4 +87,44 @@ class WellnessController extends Controller
         return $sym_count;
 
     }
+
+
+    /**
+     * return edit view
+     *
+     * @return view
+     */
+
+    public function editPatient($id){
+
+        $user = Auth::user();
+
+        $patient = Patient::find($id);
+
+        return view('wellness/editPatientDetials')
+        ->with('user', $user)
+        ->with('patient',$patient);
+
+    }
+
+
+    /**
+     * return edit view
+     *
+     * @return view
+     */
+
+    public function updatePatient( $id, Request $request){
+
+        $user = Auth::user();
+
+        $patient = Patient::find($id);
+
+        $patient->fill($request->all());
+
+        $patient->save();
+
+        return Redirect::to("/wellness/patient/$id");
+    }
+
 }
