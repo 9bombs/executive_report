@@ -40,18 +40,10 @@
 
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>เพิ่มกิจกรรมใหม่</h3>
+                        <h3>รายชื่อผู้ใช้บริการ</h3>
                     </div>
 
                     <div class="title_right">
-                        <!--<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -62,21 +54,6 @@
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>รายชื่อผู้ใช้บริการ</h2>
-                                <!--<ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>-->
                                 <div class="clearfix"></div>
                             </div>
                             
@@ -86,20 +63,21 @@
                                         <tr>
                                             <th>ลำดับ</th>
                                             <th>CN</th>
-                                            <th>รหัสนิสิต</th>
+                                            <th>รหัสนิสิต/เลขบัตรประชาชน</th>
                                             <th>ชื่อ - นามสกุล</th>
-                                            <th>คณะ</th>
-                                            <th>ชั้นปี</th>
+                                            <th>คณะ/หน่วยงานสังกัด</th>
+                                            <th>ชั้นปี/ตำแหน่ง</th>
                                             <th>ระดับ</th>
                                             <th>อาชีพ</th>
                                             <th>เพศ</th>
                                             <th>รับบริการครั้งล่าสุด</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
 
-                                    @foreach($patients as $key=>$patient) 
+                                    @foreach($patients as $key => $patient) 
 
                                         
                                         <tr>
@@ -127,11 +105,22 @@
                                                 @else
                                                     {{$patient->student_level}}
                                                 @endif
-                                            
                                             </td>
                                             <td>{{$patient->type}}</td>
                                             <td>{{$patient->gender}}</td>
-                                            <td>{{thaidate( 'j F พ.ศ.Y', strtotime($patient->histories()->latest()->first()->created_at), true)}}</td>
+                                            <td>
+                                                @if($patient->histories->count()>0)
+                                                    {{thaidate( 'j F พ.ศ.Y', strtotime($patient->histories()->latest()->first()->created_at), true)}}
+                                                @else 
+                                                    ยังไม่เคยใช้บริการ
+                                                @endif
+                                            </td>
+                                            <td>
+                                                {{Form::open(['method'  => 'DELETE', 'route' => ['wellnessPatientDelete', $patient->id]])}}
+                                                    {{Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => ''))}}
+                                                {{Form::close()}}
+                                            </td>
+                                          
                                         </tr>
                                     @endforeach
 

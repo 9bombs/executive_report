@@ -12,7 +12,7 @@ class GlobalTablesSeeder extends Seeder
     public function run()
     {
 
-        DB::table('faculties')->truncate('faculties');
+        //DB::table('faculties')->truncate('faculties');
 
         DB::table('faculties')->insert(
             ['name' => 'คณะครุศาสตร์', 'description' => '',

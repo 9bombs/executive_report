@@ -71,7 +71,7 @@ $factory->define(App\Wellness\History::class, function (Faker\Generator $faker) 
         'living_place' => $faker->randomElement($array = array ('หอพักมหาวิทยาลัย','หอพักเอกชน','บ้าน/คอนโด')), 
         'living_with' => $faker->randomElement($array = array ('คนเดียว','รูมเมท','ครอบครัว')),
         'meet_with' => $faker->numberBetween($min = 1, $max = 10),
-        'patient_id' => $faker->numberBetween($min = 1, $max = 5),
+        'patient_id' => $faker->numberBetween($min = 1, $max = 3),
         'symptom_id' => $faker->numberBetween($min = 1, $max = 15),
         'note' => $faker->realText($maxNbChars = 200, $indexSize = 2), 
         'created_at' => $faker->dateTimeThisDecade($max = 'now'),

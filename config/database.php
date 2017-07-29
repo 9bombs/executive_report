@@ -52,6 +52,7 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => 'InnoDB',
+            'foreign_key_checks'=> 0,
         ],
 
         'pgsql' => [

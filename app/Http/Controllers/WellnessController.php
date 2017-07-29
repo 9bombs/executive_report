@@ -142,6 +142,22 @@ class WellnessController extends Controller
         ->with('cn', $this->newCN());
     }
 
+
+    /**
+     * Generate CN number for new patient
+     *
+     * @return CN code
+     */
+    public function newCN() {
+
+        $max_id = DB::table('wn_patients')->max('id');
+        
+        $cn = "HN".str_pad($max_id+1, 6, "0", STR_PAD_LEFT); 
+
+        return $cn;
+    }
+
+
     /**
      * submit and create new patient and the redirect to patient details page
      *
@@ -149,8 +165,6 @@ class WellnessController extends Controller
      */
 
     public function storePatient(Request $request) {
-
-        $user = Auth::user();
 
         $data = $request->all();
 
@@ -162,14 +176,18 @@ class WellnessController extends Controller
 
     }
 
+    /**
+     * delete the specified patient
+     *
+     * @return view
+     */
 
-    public function newCN() {
+    public function deletePatient($id) {
 
-        $max_id = DB::table('wn_patients')->max('id');
-        
-        $cn = "HN".str_pad($max_id+1, 6, "0", STR_PAD_LEFT); 
+        Patient::destroy($id);
 
-        return $cn;
+        return Redirect::to("/wellness/patient-list");
+
     }
 
 }

@@ -30,7 +30,7 @@ class CreateWellnessTables extends Migration
             $table->string('nickname',25)->nullable();
             $table->string('student_level');
             $table->integer('studied_year')->nullable();
-            $table->integer('faculty_id')->nullable()->references('id')->on('faculties')->onUpdate('cascade');
+            $table->integer('faculty_id')->nullable()->unsigned();
             $table->string('field')->nullable();
 
             //ข้อมูลติดต่อฉุกเฉิน1
@@ -54,7 +54,7 @@ class CreateWellnessTables extends Migration
             $table->string('allergic')->nullable();
 
             //ผู้ให้คำปรึกษาที่ศุนย์สุขภาวะ
-            $table->integer('advisor_id')->references('id')->on('wn_advisors');
+            $table->integer('advisor_id')->unsigned();
 
             $table->softDeletes();
             $table->timestamps();
@@ -76,18 +76,32 @@ class CreateWellnessTables extends Migration
             $table->increments('id')->unsigned()->index();
             $table->enum('living_place',['หอพักมหาวิทยาลัย','หอพักเอกชน','บ้าน/คอนโด']);
             $table->enum('living_with',['คนเดียว','รูมเมท','ครอบครัว']);
-            $table->integer('meet_with')->references('id')->on('wn_advisors');
-            $table->integer('patient_id')->references('id')->on('wn_patients')->onDelete('cascade');
-            $table->integer('symptom_id')->references('id')->on('wn_symptom');
+            $table->integer('meet_with')->unsigned();
+            $table->integer('patient_id')->unsigned();
+            $table->integer('symptom_id')->unsigned();
             $table->longText('note');
             $table->timestamps();
         });
+
 
         Schema::create('wn_symptom', function (Blueprint $table) {
             $table->increments('id')->unsigned()->index();
             $table->string('name');
             $table->boolean('is_severe');
             $table->string('note');
+        });
+
+
+        Schema::table('wn_patients', function (Blueprint $table) {
+            $table->foreign('advisor_id')->references('id')->on('wn_advisors');
+            $table->foreign('faculty_id')->nullable()->references('id')->on('faculties')->onUpdate('cascade');
+
+        });
+
+        Schema::table('wn_patient_histories', function (Blueprint $table) {
+            $table->foreign('meet_with')->references('id')->on('wn_advisors');
+            $table->foreign('patient_id')->references('id')->on('wn_patients')->onDelete('cascade');
+            $table->foreign('symptom_id')->references('id')->on('wn_symptom');
         });
 
     }
@@ -101,6 +115,7 @@ class CreateWellnessTables extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('wn_patients');
         Schema::dropIfExists('wn_advisors');
         Schema::dropIfExists('wn_patient_histories');
