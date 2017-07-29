@@ -26,10 +26,13 @@ Route::get('/', array( 'as' => 'home', 'uses' => 'HomeController@index'));
 
 
 //Wellness routes
-Route::get('/wellness/home', array('as' => 'wellnessHome', 'uses' => 'WellnessController@home'));
+Route::get('/wellness', array('as' => 'wellnessHome', 'uses' => 'WellnessController@home'));
 
+//Create new patient
+Route::get('/wellness/patient/create', array('as'=>'wellnessPatientCreate', 'uses' => 'wellnessController@createPatient'));
+Route::post('/wellness/patient/create', array('as'=>'wellnessPatientStore', 'uses' => 'wellnessController@storePatient'));
 
-
+//Patient view
 Route::get('/wellness/patient-list', array('as' => 'wellnessPatientList', 'uses' => 'WellnessController@patientList'));
 Route::get('/wellness/patient/{id}', array('as' => 'wellnessPatientDetails', 'uses' => 'WellnessController@patientDetails'));
 Route::get('/wellness/patient/{id}/chart', array('as' => 'wellnessPatientChartData', 'uses' => 'WellnessController@getPatientChart'));
@@ -37,6 +40,9 @@ Route::get('/wellness/patient/{id}/chart', array('as' => 'wellnessPatientChartDa
 //Edit Patient
 Route::get('/wellness/patient/{id}/edit', array('as'=>'wellnessPatientEdit','uses' => 'WellnessController@editPatient'));
 Route::post('/wellness/patient/{id}/edit',array('as'=>'wellnessPatientSave','uses' => 'WellnessController@updatePatient'));
+
+//Delete patient
+Route::delete('/wellness/patient/{id}',array('as'=>'wellnessPatientDelete', 'uses'=>'wellnessController@deletePatient'));
 
 //Wellness graph data in JSON
 Route::get('/wellness/json/{select}' , array('as' => 'wellnessGraph', 'uses' => 'WellnessController@graphSelect'));

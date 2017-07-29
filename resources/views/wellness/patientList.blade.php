@@ -107,9 +107,28 @@
                                             <td>{{$patient->cn}}</td>
                                             <td>{{$patient->personal_id}}</td>
                                             <td><a href="/wellness/patient/{{$patient->id}}">{{$patient->name}}</a></td>
-                                            <td>{{$patient->faculty_id}}</td>
-                                            <td>{{$patient->studied_year}}</td>
-                                            <td>{{$patient->student_level}}</td>
+                                            <td>
+                                                @if($patient->type=="บุคลากร"||$patient->type=="อาจารย์")
+                                                    {{$patient->workplace}}
+                                                @else
+                                                    {{$patient->faculty()}}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($patient->type=="บุคลากร"||$patient->type=="อาจารย์")
+                                                    {{$patient->position}}
+                                                @else
+                                                    {{$patient->studied_year}}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($patient->type=="บุคลากร"||$patient->type=="อาจารย์")
+                                                    -
+                                                @else
+                                                    {{$patient->student_level}}
+                                                @endif
+                                            
+                                            </td>
                                             <td>{{$patient->type}}</td>
                                             <td>{{$patient->gender}}</td>
                                             <td>{{thaidate( 'j F พ.ศ.Y', strtotime($patient->histories()->latest()->first()->created_at), true)}}</td>

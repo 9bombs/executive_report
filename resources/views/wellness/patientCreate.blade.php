@@ -41,7 +41,7 @@
         <div class="right_col" role="main">
             <div class="page-title">
               <div class="title_left">
-                <h3>แก้ไขข้อมูลผู้ใช้บริการ: {{$patient->name}}</h3>
+                <h3>เพิ่มผู้ใช้บริการใหม่</h3>
               </div>
 
             </div>
@@ -52,12 +52,13 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>ข้อมูลผู้ใช้บริการหมายเลข: {{$patient->cn}}</h2>
+                    <h2>ข้อมูลผู้ใช้บริการใหม่</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
 
-                    {{Form::model($patient, array('route' => array('wellnessPatientSave', $patient->id),'class' => 'form-horizontal form-label-left'))}}
+                    {{Form::open(array('route' => array('wellnessPatientStore'),'class' => 'form-horizontal form-label-left'))}}
+                        {{ Form::hidden('cn', $cn, array('id' => 'invisible_id')) }}
                     
                       <h3>ข้อมูลส่วนตัว</h3>
 
@@ -98,16 +99,16 @@
                       </div>
                       
                       <div class="form-group">
-                        {{Form::label('birthdate', 'วันเกิด', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
+                        {{Form::label('birthdate', 'วัน/เดือน/ปี เกิด', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" name="birthdate" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{$patient->birthdate}}">
+                          <input id="birthday" name="birthdate" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        {{Form::label('	address', 'ที่อยู่', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
+                        {{Form::label('address', 'ที่อยู่', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::textarea('address',$patient->address, ['class' => 'form-control col-md-7 col-xs-12','size' => '30x3']) }} 
+                          {{ Form::textarea('address','', ['class' => 'form-control col-md-7 col-xs-12','size' => '30x3']) }} 
                         </div>
                       </div>
 
@@ -125,11 +126,7 @@
                         </div>
                       </div>
 
-                      <?php 
-                       $is_student = $patient->type == "นิสิตภาคปกติ" || $patient->type == "นิสิตอินเตอร์";
-                      ?>
-
-                    <div class="student-info <?php if(!$is_student) echo 'hidden'; ?> ">
+                    <div class="student-info">
 
                       <div class="form-group">
                         {{Form::label('nickname', 'ชื่อเล่น', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
@@ -148,7 +145,7 @@
                       <div class="form-group">
                         {{Form::label('studied_year', 'ชั้นปีที่', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        {{ Form::selectRange('studied_year', 1, 10, $patient->studied_year, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                        {{ Form::selectRange('studied_year', 1, 10, null, ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
@@ -158,7 +155,7 @@
                           <?php $faculties = DB::table('faculties')->select('id','name')->get(); ?>
                           <select name="faculty_id" class="form-control col-md-7 col-xs-12" >
                             @foreach($faculties as $faculty) 
-                              <option value="{{$faculty->id}}" <?php if($faculty->id == $patient->faculty_id){?>  selected="selected" <?php } ?> >{{$faculty->name}}</option>
+                              <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -173,7 +170,7 @@
 
                       </div>
 
-                      <div class="employee-info  <?php if($is_student) echo 'hidden'; ?>  ">
+                      <div class="employee-info">
 
                       <div class="form-group">
                         {{Form::label('workplace', 'หน่วยงานสังกัด', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
@@ -199,21 +196,21 @@
                       <div class="form-group">
                         {{Form::label('emergency_1_name', 'ชื่อผู้ติดต่อ', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_1_name', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_1_name', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('emergency_1_raletionship', 'ความสัมพันธ์', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_1_raletionship', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_1_raletionship', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('emergency_1_phone', 'หมายเลขติดต่อ', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_1_phone', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_1_phone', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
@@ -222,21 +219,21 @@
                       <div class="form-group">
                         {{Form::label('emergency_2_name', 'ชื่อผู้ติดต่อ', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_2_name', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_2_name', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('emergency_2_raletionship', 'ความสัมพันธ์', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_2_raletionship', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_2_raletionship', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('emergency_2_phone', 'หมายเลขติดต่อ', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'emergency_2_phone', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'emergency_2_phone', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
@@ -247,29 +244,28 @@
                       <div class="form-group">
                         {{Form::label('doctor_hospital', 'โรงพยาบาล', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'doctor_hospital', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'doctor_hospital', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('doctor_name', 'แพทย์ผู้รักษา', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'doctor_name', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'doctor_name', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('doctor_phone', 'เบอร์ติดต่อ', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {{ Form::input('text', 'doctor_phone', null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                          {{ Form::input('text', 'doctor_phone', '', ['class' => 'form-control col-md-7 col-xs-12']) }}
                         </div>
                       </div>
 
                       <div class="form-group">
                         {{Form::label('allergic', 'ยาที่แพ้', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))}}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        
-                          {{ Form::textarea('allergic',$patient->allergic, ['class' => 'form-control col-md-7 col-xs-12','size' => '30x3']) }} 
+                          {{ Form::textarea('allergic','', ['class' => 'form-control col-md-7 col-xs-12','size' => '30x3']) }} 
                         </div>
                       </div>
 
@@ -283,7 +279,7 @@
                           <?php $advisors = DB::table('wn_advisors')->select('id','name')->get(); ?>
                           <select name="advisor_id" class="form-control col-md-7 col-xs-12" >
                             @foreach($advisors as $advisor) 
-                              <option value="{{$advisor->id}}" <?php if($advisor->id == $patient->advisor_id){?>  selected="selected" <?php } ?> >{{$advisor->name}}</option>
+                              <option value="{{$advisor->id}}">{{$advisor->name}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -305,10 +301,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
 
         </div>
       <!-- /page content -->

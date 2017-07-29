@@ -104,7 +104,7 @@
                       <a href="{{URL::route('wellnessPatientList')}}">ผู้ใช้บริการทั้งหมด</a>
                     </li>
                     <li>
-                      <a href="wellness-new-form.html">เพิ่มผู้ใช้บริการใหม่</a>
+                      <a href="{{URL::route('wellnessPatientCreate')}}">เพิ่มผู้ใช้บริการใหม่</a>
                     </li>
                     <li>
                       <a href="act-form.html">สร้างกิจกรรมใหม่</a>

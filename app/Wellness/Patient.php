@@ -17,6 +17,16 @@ class Patient extends Model
     protected $guarded = ['id','created_at','updated_at'];
 
     /**
+    * Constructor
+    *
+    * @param array $attributes
+    */
+    public function __construct(array $attributes = array())
+    {
+        parent::__construct($attributes);
+    }
+
+    /**
      * Get the advisor of this patient.
      */
     public function advisor()

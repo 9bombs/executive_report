@@ -127,4 +127,49 @@ class WellnessController extends Controller
         return Redirect::to("/wellness/patient/$id");
     }
 
+    /**
+     * return Patient create page
+     *
+     * @return view
+     */
+
+    public function createPatient() {
+
+        $user = Auth::user();
+
+        return view('wellness/patientCreate')
+        ->with('user', $user)
+        ->with('cn', $this->newCN());
+    }
+
+    /**
+     * submit and create new patient and the redirect to patient details page
+     *
+     * @return view
+     */
+
+    public function storePatient(Request $request) {
+
+        $user = Auth::user();
+
+        $data = $request->all();
+
+        $patient = Patient::create($data);
+
+        $id = $patient->id;
+
+        return Redirect::to("/wellness/patient/$id");
+
+    }
+
+
+    public function newCN() {
+
+        $max_id = DB::table('wn_patients')->max('id');
+        
+        $cn = "HN".str_pad($max_id+1, 6, "0", STR_PAD_LEFT); 
+
+        return $cn;
+    }
+
 }

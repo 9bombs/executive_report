@@ -39,9 +39,9 @@ class CreateWellnessTables extends Migration
             $table->string('emergency_1_phone');
 
             //ข้อมูลติดต่อฉุกเฉิน2
-            $table->string('emergency_2_name');
-            $table->string('emergency_2_raletionship');
-            $table->string('emergency_2_phone');
+            $table->string('emergency_2_name')->nullable();
+            $table->string('emergency_2_raletionship')->nullable();
+            $table->string('emergency_2_phone')->nullable();
 
             //ข้อมูลอาจารย์-บุคลากร
             $table->string('workplace')->nullable();
@@ -51,7 +51,7 @@ class CreateWellnessTables extends Migration
             $table->string('doctor_name');
             $table->string('doctor_phone');
             $table->string('doctor_hospital');
-            $table->string('allergic');
+            $table->string('allergic')->nullable();
 
             //ผู้ให้คำปรึกษาที่ศุนย์สุขภาวะ
             $table->integer('advisor_id')->references('id')->on('wn_advisors');

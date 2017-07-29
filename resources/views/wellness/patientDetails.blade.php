@@ -145,6 +145,16 @@
                                             <div id="myTabContent" class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
 
+                                                
+                                                    @if($histories->count() == 0 )
+
+                                                    <br><br><br><br><br><br>
+
+                                                    <h2 class="text-center">ยังไม่มีประวัติการใช้บริการ</h2>
+
+                                                    @else
+
+
                                                     <!-- start recent activity -->
                                                     <ul class="messages">
                                                         <?php 
@@ -186,6 +196,8 @@
                                                         @endforeach
                                                     </ul>
                                                     <!-- end recent activity -->
+
+                                                    @endif
 
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
